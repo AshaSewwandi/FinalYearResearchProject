@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/StoreUserProfileDetails',[App\Http\Controllers\HomeController::class,'StoreUserProfileDetails']);
+Route::get('/viewpage', function () {
+    return view('viewpage');
+});
