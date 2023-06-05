@@ -54,5 +54,6 @@ class HomeController extends Controller
 
         $user->save();
 
+        return view('viewpage');
     }
 }
