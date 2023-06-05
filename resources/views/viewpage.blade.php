@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,14 +30,15 @@
     .card-8 {
       flex-basis: 60%;
       margin-right: 5px;
-      height: 550px;
+      height: 500px;
       width: 600px;
       display: flex;
     }
     .card-4 {
       flex-basis: 30%;
-      height: 550px;
+      height: 520px;
       width: 600px;
+      top:10px;
       display: flex;
       flex-direction: column;
     }
@@ -53,7 +57,7 @@
   }
   .sub-card {
     border: 1px solid #ccc;
-    padding: 50px;
+    padding: 40px;
     margin-bottom: 8px;
     margin-top: 5px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -75,7 +79,7 @@
     .square {
       width: 60px;
       height: 60px;
-      margin: 25px;
+      margin: 20px;
       border-radius: 0;
       transition: background-color 0.4s ease-in-out;
       display: flex;
@@ -106,7 +110,7 @@
                     });
                 });
             </script>
-            <img src="{{'images/frock1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <img src="{{'images/frock1.jpeg'}}"  style="width: 300px; height: 350px;">
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -117,7 +121,7 @@
                     });
                 });
             </script>
-            <img src="{{'images/top1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <img src="{{'images/top1.jpeg'}}"  style="width: 300px; height: 350px;">
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -128,7 +132,7 @@
                     });
                 });
             </script>
-            <img src="{{'images/pants1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <img src="{{'images/pants1.jpeg'}}"  style="width: 300px; height: 350px;">
         </div>
       </div>
     </div>
@@ -165,3 +169,4 @@
   </div>
 </body>
 </html>
+@endsection
