@@ -45,11 +45,14 @@ class HomeController extends Controller
             $user['UserImage'] = $image_name;
         }
 
+        $outfit_images = "";
         if($request->hasFile('PrefferedOutfits')){
             foreach($request->file('PrefferedOutfits') as $OutfitImage){
                 $outfit_image_name = $OutfitImage->getClientOriginalName();
+                $outfit_images .= $outfit_image_name . ", ";
             }
-            $user['PrefferedOutfits'] = $outfit_image_name;
+            $outfit_images = rtrim($outfit_images, ", ");
+            $user['PrefferedOutfits'] = $outfit_images;
         }
 
         $user->save();
