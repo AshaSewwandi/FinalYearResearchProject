@@ -30,15 +30,14 @@
     .card-8 {
       flex-basis: 60%;
       margin-right: 5px;
-      height: 500px;
+      height: 550px;
       width: 600px;
       display: flex;
     }
     .card-4 {
       flex-basis: 30%;
-      height: 520px;
+      height: 550px;
       width: 600px;
-      top:10px;
       display: flex;
       flex-direction: column;
     }
@@ -57,7 +56,7 @@
   }
   .sub-card {
     border: 1px solid #ccc;
-    padding: 40px;
+    padding: 50px;
     margin-bottom: 8px;
     margin-top: 5px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -77,20 +76,39 @@
       align-items: center;
     }
     .square {
-      width: 60px;
-      height: 60px;
-      margin: 20px;
+      width: 50px;
+      height: 50px;
+      margin: 1px;
       border-radius: 0;
       transition: background-color 0.4s ease-in-out;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: left;
+      align-items: left;
       color: #fff;
       font-weight: bold;
     }
-    .color-name {
+    .color-palette {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .color {
+      width: 70px;
+      height: 70px;
+      margin: 8px;
+      font-weight: bold;
+    }
+    .color-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 5px;
+      font-weight: bold;
+    }
+    .state, .square-container {
       text-align: center;
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: bold;
     }
   </style>
@@ -110,7 +128,7 @@
                     });
                 });
             </script>
-            <img src="{{'images/frock1.jpeg'}}"  style="width: 300px; height: 350px;">
+            <img src="{{'images/frock1.jpeg'}}"  style="width: 300px; height: 400px;">
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -121,7 +139,7 @@
                     });
                 });
             </script>
-            <img src="{{'images/top1.jpeg'}}"  style="width: 300px; height: 350px;">
+            <img src="{{'images/top1.jpeg'}}"  style="width: 300px; height: 400px;">
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -132,37 +150,46 @@
                     });
                 });
             </script>
-            <img src="{{'images/pants1.jpeg'}}"  style="width: 300px; height: 350px;">
+            <img src="{{'images/pants1.jpeg'}}"  style="width: 300px; height: 400px;">
         </div>
       </div>
     </div>
     <div class="card card-4">
         <h4 align="center"><i>WARDROBE COLOR COLLECTION</i></h4>
-        <div class="sub-card">
-        <div class="square-container">
-          <div class="square-column">
-            <div class="square" style="background-color: #FF6384;"></div>
-            <div class="color-name">Red</div>
-            <div class="square" style="background-color: #36A2EB;"></div>
-            <div class="color-name">Blue</div>
-            <div class="square" style="background-color: #4BC0C0;"></div>
-            <div class="color-name">Teal</div>
+          <div class="sub-card">
+            <div class="color-palette">
+              <div class="color-container">
+                <div class="color" style="background-color: #FF0000;"></div>
+                <div class="state">Red</div>
+              </div>
+              <div class="color-container">
+                <div class="color" style="background-color: #00FF00;"></div>
+                <div class="state">Green</div>
+              </div>
+              <div class="color-container">
+                <div class="color" style="background-color: #0000FF;"></div>
+                <div class="state">Blue</div>
+              </div>
+              <div class="color-container">
+                <div class="color" style="background-color: #FFFF00;"></div>
+                <div class="state">Yellow</div>
+              </div>
+              <div class="color-container">
+                <div class="color" style="background-color: #FF00FF;"></div>
+                <div class="state">Magenta</div>
+              </div>
+              <div class="color-container">
+                <div class="color" style="background-color: #00FFFF;"></div>
+                <div class="state">Cyan</div>
+              </div>
+            </div>
           </div>
-          <div class="square-column">
-            <div class="square" style="background-color: #FF6384;"></div>
-            <div class="color-name">Red</div>
-            <div class="square" style="background-color: #36A2EB;"></div>
-            <div class="color-name">Blue</div>
-            <div class="square" style="background-color: #4BC0C0;"></div>
-            <div class="color-name">Teal</div>
-          </div>
-        </div>
-      </div>
         <h4 align="center"><i>WARDROBE PATTERN COLLECTION</i></h4>
         <div class="sub-card">
-        <div class="square-container">
-          <div class="square-column">
-            <div class="color-name">Big Square</div>
+          <div class="square-container">
+            <div class="square-column">
+              <div class="color-name">Big Square</div>
+            </div>
           </div>
         </div>
     </div>
