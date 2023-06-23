@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserProfile;
+use App\Models\OutfitStyle;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -55,6 +57,28 @@ class HomeController extends Controller
             $user['PrefferedOutfits'] = $outfit_images;
         }
 
+        $data = $request->all();
+        $bodyShapeData = [ $data['bust_width'], $data['waist_width'], $data['hip_size']];
+        $payload = ['data' => $bodyShapeData];
+
+        $response = Http::post('http://localhost:8080/outfit_recommendation', $payload);
+
+        if ($response->ok()) {
+
+            $result = $response->json()['result'];
+            $frocks = $result['Frocks'];
+            $pants = $result['Pants'];
+            $tops = $result['Tops'];
+            $bodyShape = $result['Body Shape'];
+
+            $firstFrock = $frocks[0];
+            $firstPant = $pants[0];
+            $firstTop = $tops[0];
+            $userBodyShape = $bodyShape[0];
+
+            dd($userBodyShape, $firstFrock, $firstPant, $firstTop);
+
+        }
         $user->save();
 
         return view('viewpage');

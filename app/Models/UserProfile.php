@@ -9,4 +9,9 @@ class UserProfile extends Model
 {
     use HasFactory;
     protected $table = 'user_profile';
+
+    public function OutfitStyles()
+    {
+        return $this->hasMany(OutfitStyle::class);
+    }
 }
