@@ -56,7 +56,7 @@
   }
   .sub-card {
     border: 1px solid #ccc;
-    padding: 50px;
+    padding: 10px;
     margin-bottom: 8px;
     margin-top: 5px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -94,8 +94,8 @@
       align-items: center;
     }
     .color {
-      width: 70px;
-      height: 70px;
+      width: 31px;
+      height: 31px;
       margin: 8px;
       font-weight: bold;
     }
@@ -108,13 +108,13 @@
     }
     .state, .square-container {
       text-align: center;
-      margin-top: 5px;
+      margin-top: 3px;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <br><h1 class="text-center mb-4">StyleWhiz</h1><br>
+  <h1 class="text-center mb-4">StyleWhiz</h1>
   <div class="card-container">
     <div class="card card-8">
     <h4 align="center"><i>WARDROBE STYLE COLLECTION</i></h4>
@@ -129,6 +129,7 @@
                 });
             </script>
             <img src="{{'images/frock1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <h6>V-neck Short sleeve Midi A-line Dress</h6>
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -140,6 +141,7 @@
                 });
             </script>
             <img src="{{'images/top1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <h6>Square neck Bell sleeve CropTop</h6>
         </div>
         <div class="sub-card">
         <h2><i class="fa fa-heart favorite"></i></h2>
@@ -151,40 +153,30 @@
                 });
             </script>
             <img src="{{'images/pants1.jpeg'}}"  style="width: 300px; height: 400px;">
+            <h6>Bell Bottom</h6>
         </div>
       </div>
     </div>
     <div class="card card-4">
-        <h4 align="center"><i>WARDROBE COLOR COLLECTION</i></h4>
           <div class="sub-card">
-            <div class="color-palette">
-              <div class="color-container">
-                <div class="color" style="background-color: #FF0000;"></div>
-                <div class="state">Red</div>
-              </div>
-              <div class="color-container">
-                <div class="color" style="background-color: #00FF00;"></div>
-                <div class="state">Green</div>
-              </div>
-              <div class="color-container">
-                <div class="color" style="background-color: #0000FF;"></div>
-                <div class="state">Blue</div>
-              </div>
-              <div class="color-container">
-                <div class="color" style="background-color: #FFFF00;"></div>
-                <div class="state">Yellow</div>
-              </div>
-              <div class="color-container">
-                <div class="color" style="background-color: #FF00FF;"></div>
-                <div class="state">Magenta</div>
-              </div>
-              <div class="color-container">
-                <div class="color" style="background-color: #00FFFF;"></div>
-                <div class="state">Cyan</div>
+            <div class="square-container">
+              <div class="square-column">
+                <div class="color-name">Your skin type is Autumn</div>
               </div>
             </div>
           </div>
-        <h4 align="center"><i>WARDROBE PATTERN COLLECTION</i></h4>
+          <div class="sub-card">
+            <div class="square-container">
+              <div class="square-column">
+                @if(Session::has('user_body_shape'))
+                    <div class="color-name">Your body shape is {{Session::get('user_body_shape')}}</div>
+                @else
+                    <div class="color-name">Your body shape is </div>
+                @endif
+              </div>
+            </div>
+          </div>
+          <h4 align="center"><i>WARDROBE PATTERN COLLECTION</i></h4>
         <div class="sub-card">
           <div class="square-container">
             <div class="square-column">
@@ -192,6 +184,35 @@
             </div>
           </div>
         </div>
+        <h4 align="center"><i>WARDROBE COLOR COLLECTION</i></h4>
+          <div class="sub-card">
+            <div class="color-palette">
+                <div class="color-container">
+                  <div class="color" style="background-color: #9E953C;"></div>
+                  <div class="state">Dark greenish yellow</div>
+                </div>
+                <div class="color-container">
+                  <div class="color" style="background-color: #20340B;"></div>
+                  <div class="state">Dark olive green</div>
+                </div>
+                <div class="color-container">
+                  <div class="color" style="background-color: #AF3318;"></div>
+                  <div class="state">Deep reddish orange</div>
+                </div>
+                <div class="color-container">
+                  <div class="color" style="background-color: #6E294C;"></div>
+                  <div class="state">Dark purplish red</div>
+                </div>
+                <div class="color-container">
+                  <div class="color" style="background-color: #610F12;"></div>
+                  <div class="state">Deep reddish brown</div>
+                </div>
+                <div class="color-container">
+                  <div class="color" style="background-color: #C38639;"></div>
+                  <div class="state">Dark orange yellow</div>
+                </div>
+              </div>
+          </div>
     </div>
   </div>
 </body>
