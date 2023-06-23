@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\UserProfile;
 use App\Models\OutfitStyle;
+use Session;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
@@ -76,8 +77,12 @@ class HomeController extends Controller
             $firstTop = $tops[0];
             $userBodyShape = $bodyShape[0];
 
-            dd($userBodyShape, $firstFrock, $firstPant, $firstTop);
-
+            Session::put([
+                'user_body_shape' => $userBodyShape,
+                'frock_style' => $firstFrock,
+                'pant_style' => $firstPant,
+                'top_style' => $firstTop
+            ]);
         }
         $user->save();
 
