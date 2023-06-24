@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\UserProfile;
 use App\Models\OutfitStyle;
 use Session;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
@@ -82,6 +83,29 @@ class HomeController extends Controller
                 'frock_style' => $firstFrock,
                 'pant_style' => $firstPant,
                 'top_style' => $firstTop
+            ]);
+        }
+
+        $image = $request->file('user_image');
+
+        $response = Http::attach(
+            'image', file_get_contents($image->path()), $image->getClientOriginalName()
+        )->post('http://127.0.0.1:5000/predict', [
+            'skin_undertone' => $data['undertone'],
+        ]);
+
+        if ($response->ok()) {
+            $predictions = $response->json()['predictions'];
+            $predicted_color_preferences = $predictions['predicted_color_preferences'];
+            $bottoms_colors = $predicted_color_preferences['bottoms'];
+            $top_colors = $predicted_color_preferences['tops'];
+            $skin_type_identify = $predictions['skin_type'];
+            $skin_type = Arr::get($skin_type_identify, 'skin_type');
+
+            Session::put([
+                'bottom_colors' => $bottoms_colors,
+                'top_colors' => $top_colors,
+                'skin_type' => $skin_type
             ]);
         }
         $user->save();
