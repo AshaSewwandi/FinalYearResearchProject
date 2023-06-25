@@ -171,7 +171,7 @@
                 @if(Session::has('user_body_shape'))
                     <div class="color-name">Your body shape is {{Session::get('user_body_shape')}}</div>
                 @else
-                    <div class="color-name">Your body shape is </div>
+                    <div class="color-name">Your body shape is Hourglass</div>
                 @endif
               </div>
             </div>

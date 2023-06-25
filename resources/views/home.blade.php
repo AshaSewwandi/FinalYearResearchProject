@@ -57,12 +57,12 @@
             <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
             </div>
         </div>
-        <div class="col-md-6">
+        {{-- <div class="col-md-6">
             <div class="form-group">
             <label for="age"><b>Age:</b></label><br>
             <input type="text" id="age" name="age" class="form-control" placeholder="Enter your age">
             </div>
-        </div>
+        </div> --}}
         </div>
         <!-- end - row01 -->
         <br><br>
